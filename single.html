@@ -103,14 +103,106 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class=" single-grid">
 						<h4>DETECTING SSL/TLS MISCONFIGURATIONS IN ANDROID USING DYNAMIC ANALYSIS</h4>				
 							<ul class="blog-ic">
-								<li><a href="#"><span> <i  class="glyphicon glyphicon-user"> </i>Super user</span> </a> </li>
+								<li><a href="https://github.com/ashishadhav"><span> <i  class="glyphicon glyphicon-user"> </i>Ashish</span> </a> </li>
 		  						 <li><span><i class="glyphicon glyphicon-time"> </i>June 14, 2013</span></li>		  						 	
 		  						 <li><span><i class="glyphicon glyphicon-eye-open"> </i>Hits:145</span></li>
 		  					</ul>		  						
-						<p>Cras consequat iaculis lorem, id vehicula erat mattis quis. Vivamus laoreet velit justo, in ven e natis purus pretium sit amet. Praesent lectus tortor, tincidu nt in consectetur vestibulum, ultrices nec neque. Praesent nec sagittis mauris. Fusce convallis nunc neque. Integer egestas aliquam interdum. Nulla ante diam, interdum nec tempus eu, feugiat vel erat. Integer aliquam mi quis accum san porta.
-						Quisque nec turpis nisi. Proin lobortis nisl ut orci euismod, et lobortis est scelerisque. Sed eget volutpat ipsum. Integer fring illa leo porttitor, ultrices quam non, lobortis ligula. Aliquam vel consequat arcu.</p>
-						<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish.
-							On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish.</p>
+									<p> 
+									Android has been one of the most sought out mobile platforms by developers for being open, rapidly growing and for having the largest installed bases powering millions of hundreds of mobile devices. Wide use of improper and custom implementations of the standard SSL/TLS that makes Android apps vulnerable to SSL/TLS man-in-the-middle attacks has in recent years, attracted investigation of  ways to analyse Android apps dynamically and statically. Although dynamic analysis provides reliable insights and results, their manual, non-scalable and non-user-friendly nature hampers their wide scale use.
+									
+									</p>
+
+									<p>
+											In this paper, we show that by solving the app attribution problem we can automate the dynamic analysis of Android apps. We show this through developing a framework performing comprehensive step by step dynamic and automated teardown of the app registration and login procedures and their SSL endpoints. Using our app attribution solution to map network traffic to back to the apps and prevalent Android vulnerabilities spanning mishandled certificate validation, do-it-yourself cryptography, improper server configuration and other forms of information leakage, we were able to perform an automated man-in-the-middle attack and decrypt and monitor user traffic. Our analyses confirm earlier studies that 41% of Android apps are vulnerable to SSL/TLS man-in-the-middle attacks and 90% of them have at least have one major vulnerability potentially harming user confidentiality.  Through this, we demonstrate that our automated system is an efficient and scalable solution for analysing Android apps dynamically.
+									</p>
+
+									<p>
+									Currently, there are around 2.4 Million apps [17] in the Google play store. The current market share of Android is around 87\% [18]. This popularity of Android has been gathering much attention from security researchers lately. Bugiel et al. [2] showed that confused deputy and collusion attacks on Android could easily facilitate information leakage. [1] Egners et al. presented a series of attacks, fully compromising a user device, by only circumventing the Android app permission model. Along with apps [11] studies are also being done on real time detection of malicious mobile web pages [7]. Z. Wang et al. [5] found that all 22 banking apps in January 2016 can be hijacked in different Android OS allowing confidential information to be stealthily gathered. </p>
+									 
+									<p>
+									Studies have also revealed that a huge number of the Android apps have some serious security vulnerabilities[ 3,6,9 ], which can lead to attacks like man-in-middle (MITM) attack. Research using Vulhunter [10], a static analysis framework showed that 67\% of the apps have at least one vulnerability. With the advent of mobile banking and branchless banking, this problem becomes even graver. Study on Android  [14]   showed that 10,327 out of 11,748 applications that use cryptographic APIs – 88\% overall – make at least one mistake showing that applications do not use cryptographic APIs in a fashion that maximises overall security. 
+									</p>
+									<p>
+									Many pieces of research show that the common root causes for the SSL issues are the improper deployment or poorly designed APIs of SSL implementations [8], which present developers with a confusing array of settings and options. G. Greenwood et al. [15] presented that custom implementation of SSL/TLS certificate validation mostly causes security vulnerabilities. Adversaries can obtain forged certificates by compromising or coercing any CA and use them to execute MITM attacks against SSL/TLS connections [9]. Marlinspike’s Black Hat talks [12, 13] have given an overview of how SSL attacks can occur in the case of vulnerabilities. He covered SSL issues caused due to lack of security indicators, Common Name (CN) mismatches and the large number of trusted CAs and intermediate CAs. Marlinspike also introduced the SSL stripping attack and SSL sniff attacks, which are difficult to prevent in a Web app, unless several steps are taken to mitigate this risk.
+									</p>
+									<p>The presence of SSL vulnerabilities even in most popular apps have attracted a number of efforts that involve both static analysis and dynamic analysis in studying these vulnerabilities and attacks. Using the mallodroid static analysis, S. Fahl et al. [3] found that 1074 of 13500 apps studied [ almost 8 \%] do not properly implement SSL validations and are thus susceptible to MITM attacks. Dynamic analysis done by L. Onwuzurike [16]  revealed that 9 in 10 apps establish HTTPS connections under attack. Another study in banking Android apps specifically branchless banking by Reaves, B [6]  found that six out of the chosen seven apps with millions of users had severe security flaws in the SSL allowing adversaries to impersonate legitimate users or modify transactions, and even steal financial records.
+									</p>
+									<p>
+									Furthermore, Reaves [6] pointed out that using static analysis tools for detecting issues with SSL is often not reliable and manual analysis revealed stark differences between the static analysis results and the real security of app. On the similar lines, G. Greenwood et al. [15] after his dynamic analysis found that 3\% of the apps were indeed vulnerable, as opposed to 6\% suggested by automated static analysis. All static analysis tools share the limitations of mallodroid. They do not exclude dead code, or they cannot guarantee that sensitive flows are using SSL /TLS or not. Most importantly static analysis tools do not check SSL/TLS misconfigurations on remote servers. Dynamic analysis can also overcome stegomalware [19] which virtually undetectable by static analysis techniques. Hence there is a huge difference in the findings of static vs. dynamic analysis tools
+									</p>
+									<p>
+									In this paper, we are planning to extend the work of [6] Reaves by automating the manual dynamic process followed by him. We will work on app authorisation by linking the network traffic with apps, and then perform server side SSL/TLS validation from the extracted packet data. Automating the process will allow analysis of a broader set of apps. S. R. Choudhary et al. presented an extensive study comparing the popular input generation tools which help understand which tool will be useful in what context[4]. This paper will help us use the right tools for our study. The articles [20] and [21] that present ways to decrypt SSL traffic will also prove useful for our work.
+									</p>
+
+									
+									<p> <b>REFERENCES</b> </p>
+									<p>
+
+									[1] A. Egners, B. Marschollek, and U. Meyer. Messing with Android’s Permission Model. In Proceedings of the IEEE TrustCom, pages 1–22, 2012.
+									</br>
+									[2] S. Bugiel, L. Davi, A. Dmitrienko, T. Fischer, A. Sadeghi, and B. Shastry. Towards Taming Privilege-Escalation Attacks on Android. In Proceedings of the 19th Network and Distributed System Security Symposium, 2012
+
+									</br>
+									[3] S. Fahl, M. Harbach, T. Muders, L. Baumgartner, B. Freisleben, and M. Smith. Why Eve and Mallory Love Android: An Analysis of Android SSL (in)Security. In Proc. 2012 ACM Conf. Comp. and Comm. Security, CCS ’12, pages 50–61, New York, NY, USA, 2012. ACM.
+
+									</br>
+									[4]  S. R. Choudhary, A. Gorla, and A. Orso. Automated Test Input Generation for Android: Are We There Yet? In Proc. of the IEEE/ACM International Conference on Automated Software Engineering (ASE), 2015.
+
+									</br>
+									[5] Z. Wang, C. Li, Y. Guan, Y. Xue and Y. Dong, "ActivityHijacker: Hijacking the Android Activity Component for Sensitive Data," 2016 25th International Conference on Computer Communication and Networks (ICCCN), Waikoloa, HI, USA, 2016, pp. 1-9.
+
+									</br>
+									[6] Reaves, B., Scaife, N., Bates, A., Traynor, P., Butler, K.R.B.: Mo(bile) money, mo(bile) problems: analysis of branchless banking applications in the developing world. In: Proceedings of the 24th USENIX Conference on Security Symposium (2015)
+
+									</br>
+									[7] C. Amrutkar; Y. S. Kim; P. Traynor, "Detecting Mobile Malicious Webpages in Real kTime," in IEEE Transactions on Mobile Computing, vol.PP, no.99, pp.1-1
+
+									</br>
+									[8] Georgiev, M., Iyengar, S., Jana, S., Anubhai, R., Boneh, D., and V. Shmatikov, "The Most Dangerous Code in the World: Validating SSL Certificates in Non-browser Software", In Proceedings of the 2012 ACM Conference on Computer and Communications Security (CCS '12)
+
+									</br>
+
+									[9] I. Dacosta, M. Ahamad, and P. Traynor. Trust no one else: Detecting MITM attacks against SSL/TLS without third-parties. In Computer Security–ESORICS 2012, pages 199–216. Springer, 2012.
+
+									</br>
+									[10] Vulhunter: Toward Discovering Vulnerabilities in Android Applications.
+
+									</br>
+									[11]  W. Enck, M. Ongtang and P. McDaniel, "Understanding Android Security," in IEEE Security & Privacy, vol. 7, no. 1, pp. 50-57, Jan.-Feb. 2009.
+
+									</br>
+									[12] M. Marlinspike. More Tricks For Defeating SSL In Practice. In Black Hat USA, 2009. 
+
+									</br>
+									[13] M. Marlinspike. New Tricks for Defeating SSL in Practice. In Black Hat Europe, 2009.
+
+									</br>
+									[14] M. Egele, D. Brumley, Y. Fratantonio, and C. Kruegel, “An Empirical Study of Cryptographic Misuse in Android Applications,” in Proc. of CCS ’13.
+
+									</br>
+									[15] D. S. J. S. G. Greenwood and Z. L. L. Khan, “SMV-HUNTER: Large scale, automated detection of SSL/TLS man-in-the-middle vulnerabilities in Android apps,” 2014.
+
+									</br>
+									[16] L. Onwuzurike and E. De Cristofaro, “Danger is my middle name: experimenting with SSL vulnerabilities in Android apps,” in WiSec 2015.
+
+									</br>
+									[17] https://www.statista.com/statistics/266210/number-of-available-applications-in-the-google-play-store/
+
+									</br>
+									[18] http://www.idc.com/prodserv/smartphone-os-market-share.jsp
+
+									</br>
+									[19] G. Suarez-Tangil, J. E. Tapiador, and P. Peris-Lopez, “Stegomalware: Playing hide and seek with malicious components in smartphone apps,” in International Conference on Information Security and Cryptology. Springer, December 2014, pp. 496–515.
+
+									</br>
+									[20] Intercepting and decrypting SSL communications between Android phone and 3rd party server. http://www.myhowto.org/java/81-intercepting-and-decrypting-ssl-communications-between-android-phone-and-3rd-party-server/ .
+
+									</br>
+									[21] Decrypting SSL traffic with Wireshark, and ways to prevent it. https://wirewatcher.wordpress.com/2010/07/20/decrypting-ssl-traffic-with-wireshark-and-ways-to-prevent-it/
+									</p>
+
+
+
 					</div>
 					<!--<div class="comments heading">
 						<h3>Comments</h3>
